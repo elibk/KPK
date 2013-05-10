@@ -117,7 +117,7 @@ namespace TestSchoolSystem
             School theSchool = new School();
             Student newStudent = theSchool.AddNewStudent("Pesho");
             Course newCourse = theSchool.AddNewCourse("CSharp");
-            theSchool.SignStudentForCourse(newStudent.Id, newCourse.Name);
+            theSchool.SignUpStudentForCourse(newStudent.Id, newCourse.Name);
 
             School myObject = theSchool;
             Type myType = typeof(School);
@@ -134,7 +134,7 @@ namespace TestSchoolSystem
         {
             School theSchool = new School();
             Course newCourse = theSchool.AddNewCourse("CSharp");
-            theSchool.SignStudentForCourse(10000, newCourse.Name);
+            theSchool.SignUpStudentForCourse(10000, newCourse.Name);
         }
 
         [TestMethod]
@@ -143,7 +143,47 @@ namespace TestSchoolSystem
         {
             School theSchool = new School();
             Student newStudent = theSchool.AddNewStudent("Pesho");
-            theSchool.SignStudentForCourse(newStudent.Id, "CSharp");
+            theSchool.SignUpStudentForCourse(newStudent.Id, "CSharp");
+        }
+
+        [TestMethod]
+        public void SignOutStudentOfCourse_SighOutOneStudentOfOneCourse()
+        {
+            School theSchool = new School();
+            Student newStudent = theSchool.AddNewStudent("Pesho");
+            Course newCourse = theSchool.AddNewCourse("CSharp");
+            theSchool.SignUpStudentForCourse(newStudent.Id, newCourse.Name);
+
+            School myObject = theSchool;
+            Type myType = typeof(School);
+            FieldInfo setOfCourses = myType.GetField("courses", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            IList<Course> courses = setOfCourses.GetValue(myObject) as IList<Course>;
+
+            Assert.IsTrue(courses[courses.IndexOf(newCourse)].IsAttendingTheCourse(newStudent));
+
+            theSchool.SignOutStudentOfCourse(newStudent.Id, newCourse.Name);
+
+            Assert.IsFalse(courses[courses.IndexOf(newCourse)].IsAttendingTheCourse(newStudent));
+        }
+
+        [TestMethod]
+        [ExpectedExceptionAttribute(typeof(InvalidOperationException))]
+        public void SignOutStudentOfCourse_SighOutUnexistingStudentOfCourse()
+        {
+            School theSchool = new School();
+            Course newCourse = theSchool.AddNewCourse("CSharp");
+            theSchool.SignOutStudentOfCourse(10000, newCourse.Name);
+        }
+
+
+        [TestMethod]
+        [ExpectedExceptionAttribute(typeof(InvalidOperationException))]
+        public void SignOutStudentOfCourse_SighStudentOfUnexistingCourse()
+        {
+            School theSchool = new School();
+            Student newStudent = theSchool.AddNewStudent("Pesho");
+            theSchool.SignOutStudentOfCourse(newStudent.Id, "CSharp");
         }
     }
 }

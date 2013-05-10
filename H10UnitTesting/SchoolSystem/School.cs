@@ -129,13 +129,13 @@ namespace SchoolSystem
         }
 
         /// <summary>
-        /// Signs student of the school for course in the school.
+        /// Signs up student of the school for course in the school.
         /// </summary>
         /// <param name="id">The id.</param>
         /// <param name="courseName">Name of the course.</param>
         /// <exception cref="System.InvalidOperationException">If student is already signed for the course</exception>
         /// <exception cref="System.InvalidOperationException">If student is already signed for the course</exception>
-        public void SignStudentForCourse(uint id, string courseName)
+        public void SignUpStudentForCourse(uint id, string courseName)
         {
             int indexStudent = IndexOfStudent(id, this.students);
             if (indexStudent < 0)
@@ -150,6 +150,30 @@ namespace SchoolSystem
             }
 
             this.courses[indexCourse].AddNewStudent(this.students[indexStudent]);
+        }
+
+        /// <summary>
+        /// Signs out student of the school of course in the school.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <param name="courseName">Name of the course.</param>
+        /// <exception cref="System.InvalidOperationException">If student is already signed for the course</exception>
+        /// <exception cref="System.InvalidOperationException">If student is already signed for the course</exception>
+        public void SignOutStudentOfCourse(uint id, string courseName)
+        {
+            int indexStudent = IndexOfStudent(id, this.students);
+            if (indexStudent < 0)
+            {
+                throw new InvalidOperationException(string.Format("The operation can not be performed. Student with ID '{0}' does not attending the school.", id));
+            }
+
+            int indexCourse = IndexOfCourse(courseName, this.courses);
+            if (indexCourse < 0)
+            {
+                throw new InvalidOperationException(string.Format("The operation can not be performed. Course with name '{0}' does not exist in the school.", courseName));
+            }
+
+            this.courses[indexCourse].RemoveStudent(this.students[indexStudent]);
         }
 
         /// <summary>

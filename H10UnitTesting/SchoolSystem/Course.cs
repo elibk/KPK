@@ -119,9 +119,14 @@ namespace SchoolSystem
         /// The student can no be sign because the capacity of the course is reached.</exception>
         public void AddNewStudent(Student newStudent) 
         {
+            if (newStudent == null)
+            {
+                throw new ArgumentException("The value for 'student' can not be 'null'.");
+            }
+
             if (this.IsAttendingTheCourse(newStudent))
             {
-                throw new InvalidOperationException("The operation can not be performed. Student with the same ID attending the school.");
+                throw new InvalidOperationException("The operation can not be performed. Student with the same ID attending.");
             }
 
             if (this.attendingStudents.Count >= this.capacity)
@@ -130,6 +135,28 @@ namespace SchoolSystem
             }
 
             this.attendingStudents.Add(newStudent);
+        }
+
+        /// <summary>
+        /// Adds the new student.
+        /// </summary>
+        /// <param name="student">The new student.</param>
+        /// <exception cref="System.InvalidOperationException">The operation can not be performed. Student with the same ID attending the school.
+        /// or
+        /// The student can no be sign because the capacity of the course is reached.</exception>
+        public void RemoveStudent(Student student)
+        {
+            if (student == null)
+            {
+                throw new ArgumentException("The value for 'student' can not be 'null'.");
+            }
+
+            if (!this.IsAttendingTheCourse(student))
+            {
+                throw new InvalidOperationException("The operation can not be performed. Student with the same ID it is not attending the course");
+            }
+
+            this.attendingStudents.Remove(student);
         }
 
         /// <summary>
