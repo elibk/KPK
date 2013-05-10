@@ -1,0 +1,7 @@
+D:\KPK\H10UnitTesting\TestSchoolSystem\obj\Debug\TestSchoolSystem.csprojResolveAssemblyReference.cache
+D:\KPK\H10UnitTesting\TestSchoolSystem\bin\Debug\TestSchoolSystem.dll
+D:\KPK\H10UnitTesting\TestSchoolSystem\bin\Debug\TestSchoolSystem.pdb
+D:\KPK\H10UnitTesting\TestSchoolSystem\bin\Debug\SchoolSystem.dll
+D:\KPK\H10UnitTesting\TestSchoolSystem\bin\Debug\SchoolSystem.pdb
+D:\KPK\H10UnitTesting\TestSchoolSystem\obj\Debug\TestSchoolSystem.dll
+D:\KPK\H10UnitTesting\TestSchoolSystem\obj\Debug\TestSchoolSystem.pdb
