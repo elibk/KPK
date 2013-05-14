@@ -1,0 +1,5 @@
+D:\KPK\H11TestDrivenDevelopment\bin\Debug\Poker.exe
+D:\KPK\H11TestDrivenDevelopment\bin\Debug\Poker.pdb
+D:\KPK\H11TestDrivenDevelopment\obj\Debug\Poker.csprojResolveAssemblyReference.cache
+D:\KPK\H11TestDrivenDevelopment\obj\Debug\Poker.exe
+D:\KPK\H11TestDrivenDevelopment\obj\Debug\Poker.pdb

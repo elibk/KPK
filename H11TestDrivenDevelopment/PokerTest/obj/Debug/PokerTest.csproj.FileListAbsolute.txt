@@ -1,0 +1,14 @@
+D:\KPK\PokerTest\bin\Debug\PokerTest.dll
+D:\KPK\PokerTest\bin\Debug\PokerTest.pdb
+D:\KPK\PokerTest\bin\Debug\Poker.exe
+D:\KPK\PokerTest\bin\Debug\Poker.pdb
+D:\KPK\PokerTest\obj\Debug\PokerTest.csprojResolveAssemblyReference.cache
+D:\KPK\PokerTest\obj\Debug\PokerTest.dll
+D:\KPK\PokerTest\obj\Debug\PokerTest.pdb
+D:\KPK\H11TestDrivenDevelopment\PokerTest\bin\Debug\PokerTest.dll
+D:\KPK\H11TestDrivenDevelopment\PokerTest\bin\Debug\PokerTest.pdb
+D:\KPK\H11TestDrivenDevelopment\PokerTest\bin\Debug\Poker.exe
+D:\KPK\H11TestDrivenDevelopment\PokerTest\bin\Debug\Poker.pdb
+D:\KPK\H11TestDrivenDevelopment\PokerTest\obj\Debug\PokerTest.csprojResolveAssemblyReference.cache
+D:\KPK\H11TestDrivenDevelopment\PokerTest\obj\Debug\PokerTest.dll
+D:\KPK\H11TestDrivenDevelopment\PokerTest\obj\Debug\PokerTest.pdb
